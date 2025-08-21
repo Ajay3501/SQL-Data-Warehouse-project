@@ -7,6 +7,7 @@ Script Purpose:
     Run this script to re-define the DDL structure of 'bronze' Tables.
 ===============================================================================================
 */
+
 -- Building Bronze layer--
 
 -- TABLE 1 OF BRONZE CRM (1) --
@@ -70,4 +71,6 @@ cat         VARCHAR(50),
 subcat      VARCHAR(50),
 maintenance VARCHAR(50)        
 );
+
+
 
