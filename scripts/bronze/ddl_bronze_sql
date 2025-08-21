@@ -1,0 +1,73 @@
+/*
+===============================================================================================
+DDL Script: Create Bronze Layers.
+===============================================================================================
+Script Purpose:
+    This Script creates table in the 'bronze' schema,dropping existing table if they exist.
+    Run this script to re-define the DDL structure of 'bronze' Tables.
+===============================================================================================
+*/
+-- Building Bronze layer--
+
+-- TABLE 1 OF BRONZE CRM (1) --
+CREATE TABLE IF NOT EXISTS bronze.crm_cust_info (
+cst_id             INT ,
+cst_key            VARCHAR(50),
+cst_firstname      VARCHAR(50),
+cst_lastname       VARCHAR(50),
+cst_marital_status VARCHAR(50),
+cst_gndr           VARCHAR(50),
+cst_create_date    DATE
+);
+-- TABLE 2 BRONZE CRM (2)--
+
+CREATE TABLE IF NOT EXISTS bronze.crm_prd_info (
+prd_id               INT NULL  ,
+prd_key              VARCHAR(50),
+prd_nm               VARCHAR(50),
+prd_cost             INT NULL,
+prd_line             VARCHAR(50),
+prd_start_dt         DATETIME NULL ,
+prd_end_dt           DATETIME NULL
+);
+
+drop table bronze.crm_prd_info ;
+
+-- TABLE 3 BRONZE CRM (3)--
+
+CREATE TABLE IF NOT EXISTS bronze.crm_sales_details (
+sls_ord_num        VARCHAR(50) ,
+sls_prd_key        VARCHAR(50),
+sls_cust_id        INT,
+sls_order_dt       DATE,
+sls_ship_dt        DATE,
+sls_due_dt         DATE,
+sls_sales          INT,
+sls_quantity       INT,
+sls_price          INT
+);
+
+-- TABLE 4  BRONZE ERP (1) --
+
+CREATE TABLE IF NOT EXISTS bronze.erp_cust_az12 (
+cid      VARCHAR(50) ,
+bdate    DATE ,
+gen      VARCHAR(50)
+);
+
+-- TABLE 5 BRONZE ERP(2) --
+
+CREATE TABLE IF NOT EXISTS bronze.erp_loc_A101 (
+sid    VARCHAR(50),
+cntry  VARCHAR(50)
+);
+
+-- TABlE 6 BRONZE ERP (3)--
+
+CREATE TABLE IF NOT EXISTS bronze.erp_px_cat_g1v2 (
+id          VARCHAR(50),
+cat         VARCHAR(50),
+subcat      VARCHAR(50),
+maintenance VARCHAR(50)        
+);
+
