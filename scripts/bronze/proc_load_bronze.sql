@@ -60,10 +60,10 @@ SELECT * FROM bronze.crm_prd_info;
 
 -- BULK INSERT DATA INTO TABLE CRM(3) AFTER TRUNCATING ==========================================================================
 
-TRUNCATE TABLE crm_sales_details;
+TRUNCATE TABLE bronze.crm_sales_details;
 
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\sales_details.csv'
-INTO TABLE crm_sales_details
+INTO TABLE bronze.crm_sales_details
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
@@ -82,42 +82,42 @@ SET
     sls_quantity	= NULLIF(@sls_quantity,''),
     sls_price		= NULLIF(@sls_price,'');
 
-SELECT *FROM crm_sales_details;
+SELECT *FROM bronze.crm_sales_details;
 -- BULK INSERT DATA INTO TABLE ERP(1) AFTER TRUNCATING ==========================================================================
 
-TRUNCATE TABLE erp_cust_az12;
+TRUNCATE TABLE bronze.erp_cust_az12;
 
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\CUST_AZ12.csv'
-INTO TABLE erp_cust_az12
+INTO TABLE bronze.erp_cust_az12
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-SELECT *FROM erp_cust_az12;
+SELECT *FROM bronze.erp_cust_az12;
 
 -- BULK INSERT DATA INTO TABLE ERP(2) AFTER TRUNCATING ==========================================================================
 
-TRUNCATE TABLE erp_loc_a101 ;
+TRUNCATE TABLE bronze.erp_loc_a101 ;
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\LOC_A101.csv'
-INTO TABLE erp_loc_a101
+INTO TABLE bronze.erp_loc_a101
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-SELECT *FROM erp_loc_a101;
+SELECT *FROM bronze.erp_loc_a101;
 
 -- BULK INSERT DATA INTO TABLE ERP(3) AFTER TRUNCATING ==========================================================================
 
-TRUNCATE TABLE erp_px_cat_g1v2 ;
+TRUNCATE TABLE bronze.erp_px_cat_g1v2 ;
 LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/PX_CAT_G1V2.csv'
-INTO TABLE erp_px_cat_g1v2
+INTO TABLE bronze.erp_px_cat_g1v2
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-SELECT *FROM erp_px_cat_g1v2;
+SELECT *FROM bronze.erp_px_cat_g1v2;
 
 
