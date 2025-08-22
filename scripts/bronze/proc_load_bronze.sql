@@ -30,7 +30,7 @@ SELECT count(*) FROM bronze.crm_cust_info;
 
 -- BULK INSERT DATA INTO TABLE CRM(2) =====================================================================================
 
-TRUNCATE TABLE bronze.crm_cust_info;
+TRUNCATE TABLE bronze.prd_cust_info;
 
 LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\prd_info.csv"
 INTO TABLE bronze.crm_prd_info
